@@ -20,9 +20,9 @@ h1, h2 { margin: 0; white-space: pre-line; font-family: var(--bakery-display-fon
 .bakery-hero > img, .bakery-hero__veil { position: absolute; inset: 0; width: 100%; height: 100%; }
 .bakery-hero > img { object-fit: cover; }
 .bakery-hero__veil { background: linear-gradient(90deg, rgba(28, 17, 11, .92), rgba(28, 17, 11, .58) 42%, rgba(28, 17, 11, .08)); }
-.bakery-hero__content { position: relative; z-index: 1; display: flex; min-height: inherit; max-width: 48rem; padding: clamp(2rem, 6vw, 6rem); flex-direction: column; justify-content: space-between; color: var(--bakery-light-ink); }
+.bakery-hero__content { position: relative; z-index: 1; display: flex; min-height: inherit; max-width: 48rem; padding: clamp(2rem, 6vw, 6rem); flex-direction: column; justify-content: space-between; gap: 1.5rem; color: var(--bakery-light-ink); }
 .eyebrow { margin: 0; color: var(--bakery-accent-soft); font-size: .67rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.bakery-hero h1 { max-width: 9ch; font-size: clamp(4rem, 8vw, 8rem); line-height: .91; }
+.bakery-hero h1 { max-width: 9ch; font-size: clamp(4rem, 6vw, 6.5rem); line-height: 1.02; }
 .bakery-hero__content > div { display: flex; gap: 2rem; align-items: end; }
 .bakery-hero__content > div p { max-width: 21rem; margin: 0; color: color-mix(in srgb, var(--bakery-light-ink) 82%, transparent); line-height: 1.6; }
 .bakery-hero small { font-size: .72rem; letter-spacing: .04em; }
@@ -33,7 +33,7 @@ h1, h2 { margin: 0; white-space: pre-line; font-family: var(--bakery-display-fon
 .bakery-button--dark { background: var(--bakery-dark); }
 
 .section { padding: clamp(4rem, 9vw, 9rem) clamp(1rem, 6vw, 6rem); background: var(--bakery-canvas); }
-.section h2, .preorder h2 { font-size: clamp(3rem, 5.6vw, 6rem); line-height: .99; }
+.section h2, .preorder h2 { font-size: clamp(3rem, 5.6vw, 6rem); line-height: 1.04; }
 .specialties__intro { display: grid; grid-template-columns: minmax(9rem, .45fr) minmax(20rem, 1fr); max-width: 76rem; margin: 0 auto clamp(3rem, 6vw, 5rem); column-gap: clamp(2rem, 7vw, 7rem); row-gap: 1.5rem; align-items: end; }
 .specialties__intro .eyebrow { grid-column: 1; grid-row: 1 / span 2; align-self: start; padding-top: .65rem; }
 .specialties__intro h2 { grid-column: 2; max-width: 10ch; }
@@ -51,7 +51,7 @@ h1, h2 { margin: 0; white-space: pre-line; font-family: var(--bakery-display-fon
 
 .story { display: grid; grid-template-columns: 1fr 1fr; min-height: 46rem; background: var(--bakery-dark); color: var(--bakery-light-ink); }
 .story__copy { display: grid; padding: clamp(3rem, 8vw, 8rem); align-content: center; }
-.story h2 { max-width: 9ch; margin: 2rem 0; font-size: clamp(3.2rem, 5.2vw, 6rem); line-height: .99; }
+.story h2 { max-width: 9ch; margin: 2rem 0; font-size: clamp(3.2rem, 5.2vw, 6rem); line-height: 1.04; }
 .story__copy > p:not(.eyebrow) { max-width: 28rem; margin: 0; color: color-mix(in srgb, var(--bakery-light-ink) 72%, transparent); line-height: 1.7; }
 .story__copy > span { margin-top: 5rem; color: var(--bakery-accent-soft); font-size: .75rem; letter-spacing: .08em; }
 .story > img { width: 100%; height: 100%; object-fit: cover; }
@@ -64,12 +64,11 @@ h1, h2 { margin: 0; white-space: pre-line; font-family: var(--bakery-display-fon
 .visit__grid p { margin: 0 0 .5rem; color: var(--bakery-muted); font-size: .85rem; }
 .visit .bakery-button { margin-top: 2rem; }
 
-.preorder { display: grid; padding: clamp(4rem, 9vw, 9rem) clamp(1rem, 6vw, 6rem); grid-template-columns: minmax(9rem, .45fr) minmax(20rem, 1fr); max-width: 88rem; margin: 0 auto; column-gap: clamp(2rem, 7vw, 7rem); row-gap: 1.5rem; align-items: start; background: var(--bakery-canvas); }
-.preorder .eyebrow { grid-column: 1; grid-row: 1 / span 4; padding-top: .65rem; }
-.preorder h2 { grid-column: 2; max-width: 10ch; }
-.preorder > p:not(.eyebrow) { grid-column: 2; max-width: 34rem; margin: 0; color: var(--bakery-muted); line-height: 1.65; }
-.preorder .bakery-button { grid-column: 2; margin-top: .5rem; align-self: start; }
-.preorder small { grid-column: 2; color: var(--bakery-muted); font-size: .72rem; }
+.preorder { display: flex; padding: clamp(4rem, 9vw, 9rem) clamp(1rem, 6vw, 6rem); flex-direction: column; align-items: center; gap: 1.5rem; background: var(--bakery-canvas); text-align: center; }
+.preorder h2 { max-width: 46rem; font-size: clamp(3rem, 4.5vw, 5rem); line-height: 1.06; }
+.preorder > p:not(.eyebrow) { max-width: 36rem; margin: 0; color: var(--bakery-muted); line-height: 1.7; }
+.preorder .bakery-button { margin-top: .25rem; }
+.preorder small { color: var(--bakery-muted); font-size: .72rem; }
 
 footer { display: grid; grid-template-columns: 1.2fr .8fr 1fr; gap: 2rem; padding: 2rem clamp(1rem, 4vw, 4.5rem); align-items: end; background: var(--bakery-dark); color: var(--bakery-light-ink); }
 footer > div { display: grid; gap: .5rem; color: color-mix(in srgb, var(--bakery-light-ink) 66%, transparent); font-size: .72rem; }
@@ -83,12 +82,12 @@ footer > div:last-child { text-align: right; }
   .bakery-header nav { display: none; }
   .bakery-hero { min-height: max(43rem, calc(100dvh - 4.5rem)); }
   .bakery-hero__content { padding: 1.5rem 1rem 2rem; justify-content: flex-start; gap: clamp(1.25rem, 4vh, 2.5rem); }
-  .bakery-hero h1 { max-width: 8ch; font-size: clamp(3.5rem, 15vw, 5rem); line-height: .94; }
+  .bakery-hero h1 { max-width: 8ch; font-size: clamp(3.5rem, 15vw, 5rem); line-height: .98; }
   .bakery-hero__content > div { align-items: start; flex-direction: column; gap: 1.25rem; }
   .bakery-hero small { margin-top: auto; }
   .specialties__intro, .specialties__body, .story, .visit__grid, .preorder { grid-template-columns: 1fr; }
   .specialties__intro { margin-bottom: 3rem; }
-  .specialties__intro .eyebrow, .specialties__intro h2, .specialties__intro > p:last-child, .preorder .eyebrow, .preorder h2, .preorder > p:not(.eyebrow), .preorder .bakery-button, .preorder small { grid-column: auto; grid-row: auto; padding-top: 0; }
+  .specialties__intro .eyebrow, .specialties__intro h2, .specialties__intro > p:last-child { grid-column: auto; grid-row: auto; padding-top: 0; }
   .specialties__body { gap: 3rem; }
   .story { min-height: auto; }
   .story__copy { min-height: 32rem; }
