@@ -16,11 +16,17 @@ sections: [
 ]
 ```
 
-Le header, le hero et le footer restent structurels. Les sections disponibles sont `specialties`, `story`, `visit` et `preorder`.
+Le header, le hero et le footer restent structurels. Les sections disponibles sont `specialties`, `story`, `visit` et `preorder`. Les composants sont isolés dans `src/views/components/`, les layouts sont passifs dans `src/views/layouts/`, et `src/hooks/useBakeryPage.ts` résout la composition.
 
 ## Modules
 
-Le CTA de précommande est volontairement une demande par email dans la démo. Il peut être remplacé par le module de réservation `antl-site-booking`, ou complété par `antl-site-payments` lorsque le parcours client et l'offre sont définis.
+Le CTA de précommande est volontairement une demande par email dans la démo. Le contrat typé `preorder.action` permet trois parcours sans modifier les composants :
+
+- `inquiry` : demande de devis ou commande sur mesure ;
+- `booking` : retrait sur créneau, atelier ou rendez-vous, via le consommateur `BookingProviderEmbed` de `src/booking/` ;
+- `commerce` : produit standardisé payable, via `CheckoutButton` de `src/payments/` et `/api/checkout`.
+
+Les sources client des deux modules ont été exportées dans ce dépôt. Pour activer une formule, compléter `BOOKING_SETUP.md` ou `PAYMENTS_SETUP.md` avec les comptes et règles du client. Le mode `commerce` exige un serveur/fonctions pour Checkout et le webhook Stripe ; aucune clé ni offre de paiement n’est incluse dans la démo GitHub Pages.
 
 ## Développement
 
