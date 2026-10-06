@@ -74,15 +74,31 @@ footer { display: grid; grid-template-columns: 1.2fr .8fr 1fr; gap: 2rem; paddin
 footer > div { display: grid; gap: .5rem; color: color-mix(in srgb, var(--bakery-light-ink) 66%, transparent); font-size: .72rem; }
 footer > div:last-child { text-align: right; }
 .not-found > section { min-height: 64vh; padding: clamp(4rem, 10vw, 10rem) clamp(1rem, 6vw, 6rem); background: var(--bakery-canvas); }
-.not-found h1 { max-width: 10ch; margin: 2rem 0; font-size: clamp(4rem, 8vw, 8rem); line-height: .94; }
+.not-found h1 { max-width: 10ch; margin: 2rem 0; font-size: clamp(2.75rem, 8vw, 8rem); line-height: 1.12; overflow-wrap: anywhere; }
 .not-found section > p:not(.eyebrow) { max-width: 24rem; color: var(--bakery-muted); line-height: 1.65; }
+
+a,button { touch-action: manipulation; }
+.bakery-header a,footer a { display: inline-flex; align-items: center; min-height: 44px; }
+.bakery-button { max-width: 100%; }
+.section>*,.specialties__body>*,.story>*,footer>* { min-width: 0; }
+.product-list article { grid-template-columns: 2rem minmax(0,1fr) auto; }
+.product-list h3 { line-height: 1.2; }
+.preorder button { min-height: 48px; }
+@media (max-width: 1050px) and (min-width: 761px) {
+  .specialties__body { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 2rem; }
+  .specialties__intro { grid-template-columns: minmax(0,.45fr) minmax(0,1fr); gap: 2rem; }
+  .bakery-header nav { gap: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.bakery-button { transition: none; } }
 
 @media (max-width: 760px) {
   .bakery-header { grid-template-columns: 1fr auto; min-height: 4.5rem; }
-  .bakery-header nav { display: none; }
+  .bakery-header { padding-block: .6rem; gap: .25rem .75rem; }
+  .bakery-header nav { display: flex; grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: .75rem; }
   .bakery-hero { min-height: max(43rem, calc(100dvh - 4.5rem)); }
   .bakery-hero__content { padding: 1.5rem 1rem 2rem; justify-content: flex-start; gap: clamp(1.25rem, 4vh, 2.5rem); }
   .bakery-hero h1 { max-width: 8ch; font-size: clamp(3.5rem, 15vw, 5rem); line-height: .98; }
+  .bakery-hero h1 { line-height: 1.08; }
   .bakery-hero__content > div { align-items: start; flex-direction: column; gap: 1.25rem; }
   .bakery-hero small { margin-top: auto; }
   .specialties__intro, .specialties__body, .story, .visit__grid, .preorder { grid-template-columns: 1fr; }
@@ -95,4 +111,9 @@ footer > div:last-child { text-align: right; }
   .visit__grid { gap: 2.5rem; }
   footer { grid-template-columns: 1fr; }
   footer > div:last-child { text-align: left; }
+  .product-list article { grid-template-columns: 1.5rem minmax(0,1fr); gap: .6rem; }
+  .product-list article>strong { grid-column: 2; }
+  .story>img { height: auto; min-height: 0; aspect-ratio: 4 / 5; }
+  .preorder h2 { font-size: clamp(2.65rem,11vw,4rem); }
+  footer { overflow-wrap: anywhere; }
 }
